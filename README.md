@@ -121,3 +121,152 @@ Module Module1
     End Structure
 End Module
 ```
+
+## Conditional Branching and Loops
+
+* In VB.NET, the If statement is used for conditional branching.
+* It allows you to execute different blocks of code based on whether a specified condition is true or false.
+* The If statement can be used in various forms, including single-line and multi-line constructs.
+* Here's an overview of how to use the If statement:
+
+1. Single-Line If Statement:
+* The single-line If statement is used when you have a simple condition and a single action to perform if the condition is true. The syntax is as follows
+```vb
+'If condition Then resultIfTrue
+Dim num As Integer = 10
+If num > 5 Then Console.WriteLine("Number is greater than 5")
+```
+2. Multi-Line If Statement:
+* The multi-line If statement is used when you want to execute multiple statements if the condition is true. It has the following syntax:
+```vb
+'If condition Then
+    ' Code to execute if condition is true
+    ' More code...
+'End If
+
+Dim score As Integer = 85
+If score >= 60 Then
+    Console.WriteLine("Pass")
+    Console.WriteLine("Congratulations!")
+End If
+```
+* Single-line
+```vb
+'Conditionals and Loops
+        '   If statements
+        Console.WriteLine("Enter your name: ")
+        Dim name As String = Console.ReadLine()
+
+        Console.WriteLine("Enter your age: ")
+        Dim age As Byte = Console.ReadLine()
+
+        If age < 13 Then Console.WriteLine($"Hi {name}, You are not yet a teenager")
+
+        If age > 12 And age < 20 Then Console.WriteLine($"Hi {name}, You are a Teenager")
+
+        If age > 19 Then Console.WriteLine($"Hi {name}, You are an adult")
+
+        Console.ReadKey(True)
+```
+* Multi-line
+```vb
+'multi line if statements
+
+        Console.WriteLine("Enter your name young ser: ")
+        Dim name As String = Console.ReadLine()
+
+        Console.WriteLine("Enter your age now sillyboyyy: ")
+        Dim age As Byte = Console.ReadLine()
+
+        If age > 19 Then
+            Console.WriteLine($"Hi, {name}!! You are an adult!")
+            Console.WriteLine("That means you can drink")
+        End If
+
+        Console.ReadKey(True)
+```
+
+### ___if else statements___
+
+* If...Else Statement:
+The If...Else statement is used to execute one block of code if the condition is true and another block of code if the condition is false. The syntax is:
+```vb
+If condition Then
+    ' Code to execute if condition is true
+Else
+    ' Code to execute if condition is false
+End If
+```
+* Example:
+```vb
+Dim age As Integer = 18
+If age >= 18 Then
+    Console.WriteLine("You are an adult.")
+Else
+    Console.WriteLine("You are not yet an adult.")
+End If
+```
+
+### ___if elseif else statements___
+* If...ElseIf...Else Statement:
+This construct is used when you have multiple conditions to check. You can use multiple ElseIf clauses between the initial If and the final Else (optional) to handle different cases. The syntax is:
+```vb
+If condition1 Then
+    ' Code to execute if condition1 is true
+ElseIf condition2 Then
+    ' Code to execute if condition2 is true
+' ... (more ElseIf clauses)
+Else
+    ' Code to execute if none of the conditions are true
+End If
+```
+* Example:
+```vb
+Dim dayOfWeek As Integer = 3
+If dayOfWeek = 1 Then
+    Console.WriteLine("It's Sunday.")
+ElseIf dayOfWeek = 7 Then
+    Console.WriteLine("It's Saturday.")
+Else
+    Console.WriteLine("It's a weekday.")
+End If
+```
+* *These are the basic forms of the If statement in VB.NET. They allow you to control the flow of your program based on different conditions. You can use logical operators (such as And, Or, Not) to create complex conditions.*
+
+### ___here's a mini fizzbuzz codeblock using just if elseif else statements
+```vb
+Module Module1
+
+    Sub Main()
+        'if elseif else endif staements
+
+        'fizz - multiples of 3
+        'buzz - multiples of 5
+        'fizzbuzz - multiples of both 3 and 5
+
+        Console.WriteLine("Enter a number [uInteger] let me tell you if it is a fizz, buzz or fizzbuzz")
+        Dim intRange As UInteger = 4_294_967_295
+        Dim n As UInteger = Console.ReadLine()
+
+        If n > intRange Then
+            Console.WriteLine("sorry, your number is outside the range of an unsigned integer")
+        ElseIf n < intRange Then
+            If n Mod 3 = 0 AndAlso n Mod 5 = 0 Then
+                Console.WriteLine("fizzbuzz")
+            ElseIf n Mod 3 = 0 Then
+                Console.WriteLine("fizz")
+            ElseIf n Mod 5 = 0 Then
+                Console.WriteLine("buzz")
+            Else
+                Console.WriteLine($"{n} is not a fizz nor a buzz")
+            End If
+        Else
+            Console.WriteLine("Some Serious Error Occurred")
+        End If
+
+        Console.ReadKey(True)
+
+    End Sub
+
+End Module
+```
