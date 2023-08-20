@@ -1,34 +1,38 @@
 ﻿Module Module1
-
+    
     Sub Main()
-        'if elseif else endif staements
+        'a simple calculator
+        'operators {+, -, *, /}
+        Dim a As Integer
+        Dim myoperator As String
+        Dim b As Integer
+        Dim answer As Integer
 
-        'fizz - multiples of 3
-        'buzz - multiples of 5
-        'fizzbuzz - multiples of both 3 and 5
+        Console.WriteLine("This simple calculator allows you to add, subtract, multiply or divide two numbers")
 
-        Console.WriteLine("Enter a number [uInteger] let me tell you if it is a fizz, buzz or fizzbuzz")
-        Dim intRange As UInteger = 4_294_967_295
-        Dim n As UInteger = Console.ReadLine()
+        Console.WriteLine("Enter the first number: ")
+        a = Console.ReadLine()
 
-        If n > intRange Then
-            Console.WriteLine("sorry, your number is outside the range of an unsigned integer")
-        ElseIf n < intRange Then
-            If n Mod 3 = 0 AndAlso n Mod 5 = 0 Then
-                Console.WriteLine("fizzbuzz")
-            ElseIf n Mod 3 = 0 Then
-                Console.WriteLine("fizz")
-            ElseIf n Mod 5 = 0 Then
-                Console.WriteLine("buzz")
-            Else
-                Console.WriteLine($"{n} is not a fizz nor a buzz")
-            End If
+        Console.WriteLine("Choose an operator : {+, -, *, /}")
+        myoperator = Console.ReadLine()
+
+        Console.WriteLine("Enter the second number: ")
+        b = Console.ReadLine()
+
+        If myoperator = "+" Then
+            answer = a + b
+        ElseIf myoperator = "-" Then
+            answer = a - b
+        ElseIf myoperator = "*" Then
+            answer = a * b
+        ElseIf myoperator = "/" Then
+            answer = a / b
         Else
-            Console.WriteLine("Some Serious Error Occurred")
+            answer = 0
         End If
 
-        Console.ReadKey(True)
+        Console.WriteLine($"The answer is : {answer}")
+        Console.readKey(True)
 
     End Sub
-
 End Module
