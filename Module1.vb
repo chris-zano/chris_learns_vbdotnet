@@ -1,38 +1,37 @@
 ﻿Module Module1
-    
     Sub Main()
-        'a simple calculator
-        'operators {+, -, *, /}
-        Dim a As Integer
-        Dim myoperator As String
-        Dim b As Integer
-        Dim answer As Integer
+        'Constants in VB.NET
+        '   These are fixed values that the program may not alter during its execution
+        '   Just like the concept of a constant variable in C or JavaScript
 
-        Console.WriteLine("This simple calculator allows you to add, subtract, multiply or divide two numbers")
+        'Declaring Constants - [modifiers{}] Const constantList
+        'Example 
+        '   Const maxVal As Long = 4999
+        '   Public Const message As String = "Hello World"
+        '   Private Const piValue As Double = 3.1415
 
-        Console.WriteLine("Enter the first number: ")
-        a = Console.ReadLine()
+        Const PI As Double = 3.1415
+        Dim radius As Double
+        Dim choice As Byte
+        Dim circumfrence As Double
+        Dim area As Double
+        Console.WriteLine("Enter the radius of the circle: ")
+        radius = Console.ReadLine()
 
-        Console.WriteLine("Choose an operator : {+, -, *, /}")
-        myoperator = Console.ReadLine()
+        Console.WriteLine("Enter (1) to calculate the circumfrence or (2) to calculate area")
+        choice = Console.ReadLine()
 
-        Console.WriteLine("Enter the second number: ")
-        b = Console.ReadLine()
-
-        If myoperator = "+" Then
-            answer = a + b
-        ElseIf myoperator = "-" Then
-            answer = a - b
-        ElseIf myoperator = "*" Then
-            answer = a * b
-        ElseIf myoperator = "/" Then
-            answer = a / b
+        If choice = 1 Then
+            circumfrence = 2 * PI * radius
+            Console.WriteLine($"The circumfrence is {circumfrence}")
+        ElseIf choice = 2 Then
+            area = PI * (radius ^ 2)
+            Console.WriteLine($"The area id {area}")
         Else
-            answer = 0
+            Console.WriteLine("Invalid request!!! Enter (1) to calculate the circumfrence or (2) to calculate area")
         End If
 
-        Console.WriteLine($"The answer is : {answer}")
-        Console.readKey(True)
-
+        Console.ReadKey(True)
     End Sub
+
 End Module
